@@ -109,6 +109,33 @@
       --studio-badge-color: #0284c7;
     }
 
+    /* Psychedelic Studio Distinct Theme Variables (Fuchsia & Violet) */
+    [data-studio="psy"] {
+      --chip-active-text: #f0abfc;
+      --preset-active-text: #f5d0fe;
+      --studio-accent: #d946ef;
+      --studio-accent-hover: #e879f9;
+      --studio-accent-gradient: linear-gradient(135deg, #d946ef, #7c3aed);
+      --studio-accent-gradient-hover: linear-gradient(135deg, #e879f9, #d946ef);
+      --studio-accent-subtle: rgba(217, 70, 239, 0.15);
+      --studio-accent-border: rgba(217, 70, 239, 0.35);
+      --studio-badge-bg: rgba(217, 70, 239, 0.15);
+      --studio-badge-color: #e879f9;
+    }
+
+    [data-theme="light"][data-studio="psy"] {
+      --chip-active-text: #a21caf;
+      --preset-active-text: #a21caf;
+      --studio-accent: #c026d3;
+      --studio-accent-hover: #a21caf;
+      --studio-accent-gradient: linear-gradient(135deg, #d946ef, #7c3aed);
+      --studio-accent-gradient-hover: linear-gradient(135deg, #e879f9, #d946ef);
+      --studio-accent-subtle: rgba(192, 38, 211, 0.12);
+      --studio-accent-border: rgba(192, 38, 211, 0.3);
+      --studio-badge-bg: rgba(192, 38, 211, 0.12);
+      --studio-badge-color: #c026d3;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Malgun Gothic", "맑은 고딕", sans-serif;
@@ -297,6 +324,14 @@
     }
     [data-studio="icon"] .theme-switch-container:hover {
       border-color: #0284c7;
+    }
+    [data-studio="psy"] .theme-switch input:checked + .slider,
+    [data-studio="psy"] input:checked + .slider {
+      background: linear-gradient(135deg, #d946ef, #7c3aed) !important;
+      border-color: #d946ef !important;
+    }
+    [data-studio="psy"] .theme-switch-container:hover {
+      border-color: #d946ef;
     }
     input:checked + .slider::before {
       transform: translateX(16px);
@@ -1234,6 +1269,96 @@
       background: rgba(2, 132, 199, 0.15);
       border-color: rgba(2, 132, 199, 0.35);
     }
+
+    /* Psychedelic Studio Fuchsia Theme Overrides */
+    #btn_tab_psy.active {
+      background: linear-gradient(135deg, #d946ef, #7c3aed);
+      border-color: rgba(217, 70, 239, 0.4);
+    }
+    [data-studio="psy"] .radio-card.active {
+      border-color: #d946ef;
+      background: rgba(217, 70, 239, 0.08);
+    }
+    [data-studio="psy"] .radio-card:hover {
+      border-color: rgba(217, 70, 239, 0.6);
+    }
+    [data-studio="psy"] .radio-card input[type="radio"] {
+      accent-color: #d946ef;
+    }
+    [data-studio="psy"] input[type="text"]:focus,
+    [data-studio="psy"] select:focus,
+    [data-studio="psy"] textarea#finalPrompt:focus {
+      border-color: #d946ef;
+      box-shadow: 0 0 0 1px rgba(217, 70, 239, 0.3);
+    }
+    [data-studio="psy"] .chips-group[data-mode="single"] .chip.active,
+    [data-studio="psy"] .chip.active {
+      background: rgba(217, 70, 239, 0.15);
+      border-color: #d946ef;
+      color: var(--chip-active-text);
+    }
+    [data-studio="psy"] .chip:hover {
+      border-color: rgba(217, 70, 239, 0.6);
+      color: var(--text-main);
+    }
+    [data-studio="psy"] .card-content.dimmed .chip:hover,
+    [data-studio="psy"] .card-content.dimmed .outfit-preset-btn:hover {
+      border-color: #d946ef !important;
+      box-shadow: 0 0 0 1.5px #d946ef, 0 4px 14px rgba(217, 70, 239, 0.35) !important;
+    }
+    [data-studio="psy"] .mode-badge-single,
+    [data-studio="psy"] .mode-badge-multi {
+      color: var(--studio-badge-color);
+      background: var(--studio-badge-bg);
+      border-color: var(--studio-accent-border);
+    }
+    [data-studio="psy"] .outfit-preset-btn.active {
+      background: rgba(217, 70, 239, 0.2);
+      border-color: #d946ef;
+      color: var(--preset-active-text);
+    }
+    [data-studio="psy"] .outfit-preset-btn:hover {
+      border-color: rgba(217, 70, 239, 0.6);
+    }
+    [data-studio="psy"] .check-item input[type="checkbox"] {
+      accent-color: #d946ef;
+    }
+    [data-studio="psy"] .check-item:hover {
+      border-color: rgba(217, 70, 239, 0.6);
+    }
+    [data-studio="psy"] .strict-mode-panel {
+      background: rgba(217, 70, 239, 0.08);
+      border-color: rgba(217, 70, 239, 0.35);
+    }
+    [data-studio="psy"] .strict-mode-panel:hover {
+      border-color: #d946ef;
+      background: rgba(217, 70, 239, 0.12);
+    }
+    [data-studio="psy"] .strict-mode-label input[type="checkbox"] {
+      accent-color: #d946ef;
+    }
+    [data-studio="psy"] .strict-mode-title {
+      color: var(--studio-accent-hover);
+    }
+    [data-theme="light"][data-studio="psy"] .strict-mode-title {
+      color: var(--studio-accent);
+    }
+    [data-studio="psy"] .strict-mode-badge {
+      color: var(--studio-badge-color);
+      background: var(--studio-badge-bg);
+      border-color: var(--studio-accent-border);
+    }
+    .psy-style-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .psy-hidden {
+      display: none !important;
+    }
+    .psy-sub-label {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin: 2px 0 6px;
+    }
     .domain-tabs {
       display: flex;
       flex-wrap: wrap;
@@ -1307,6 +1432,10 @@
             <span>📐</span>
             <span>아이콘 스튜디오</span>
             <span class="studio-tab-badge">Vector &amp; UI</span>
+          </button>
+          <button type="button" class="studio-tab-btn" id="btn_tab_psy" onclick="switchStudio('psy')">
+            <span>🌀</span>
+            <span>사이키델릭 스튜디오</span>
           </button>
         </div>
       </div>
@@ -2116,6 +2245,401 @@
 
     </div>
 
+    <!-- Studio 3: Psychedelic Steps Container -->
+    <div class="steps-container" id="psy_steps_container" style="display: none;">
+
+      <!-- PSY STEP 1: Sub-style & Reference Role -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="step-num" style="background: linear-gradient(135deg, #d946ef, #7c3aed);">1</div>
+            사이키델릭 하위 스타일 &amp; 첨부 이미지 역할 (Style &amp; Reference)
+          </div>
+          <span style="font-size: 11px; color: #71717a;">매체·질감 및 첨부 이미지 사용 방식</span>
+        </div>
+
+        <div class="radio-grid psy-style-grid">
+          <div class="radio-card active" id="psy_card_style_0" onclick="setPsyStyle(0)">
+            <div class="radio-card-title">
+              <input type="radio" name="psy_style" id="psy_style_0" checked>
+              🌸 네온 팝아트 초상
+            </div>
+            <div class="radio-card-desc">평면 벡터 · 하프톤 · 네온 등고선</div>
+          </div>
+          <div class="radio-card" id="psy_card_style_1" onclick="setPsyStyle(1)">
+            <div class="radio-card-title">
+              <input type="radio" name="psy_style" id="psy_style_1">
+              🌀 그루비 스월 두들
+            </div>
+            <div class="radio-card-desc">화면 가득 소용돌이 · 무지개 그라데이션</div>
+          </div>
+          <div class="radio-card" id="psy_card_style_2" onclick="setPsyStyle(2)">
+            <div class="radio-card-title">
+              <input type="radio" name="psy_style" id="psy_style_2">
+              ☮️ 60~70년대 플라워파워 포스터
+            </div>
+            <div class="radio-card-desc">깔끔한 선화 · 햇살 · 히피 감성</div>
+          </div>
+          <div class="radio-card" id="psy_card_style_3" onclick="setPsyStyle(3)">
+            <div class="radio-card-title">
+              <input type="radio" name="psy_style" id="psy_style_3">
+              👁️ 비저너리 마커 드로잉
+            </div>
+            <div class="radio-card-desc">손그림 마커 · 기괴한 밀도 · 종이 질감</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+          <span style="font-size: 11px; color: #a1a1aa; white-space: nowrap;">추가 키워드:</span>
+          <input type="text" id="psy_custom_style" placeholder="예: glowing blacklight poster vibe" oninput="updatePsyPrompt()">
+        </div>
+
+        <div class="form-label" style="margin-bottom: 4px;">
+          <span>📎 첨부 이미지 역할 (1개만 선택)</span>
+          <span class="mode-badge-single">● 단일 선택</span>
+        </div>
+        <div class="radio-grid">
+          <div class="radio-card active" id="psy_role_card_new" onclick="setPsyRefRole('new')">
+            <div class="radio-card-title">
+              <input type="radio" name="psy_ref_role" id="psy_role_new" checked>
+              ✨ 새로 생성
+            </div>
+            <div class="radio-card-desc">첨부 없이 텍스트로 생성</div>
+          </div>
+          <div class="radio-card" id="psy_role_card_convert" onclick="setPsyRefRole('convert')">
+            <div class="radio-card-title">
+              <input type="radio" name="psy_ref_role" id="psy_role_convert">
+              📷 사진 변환
+            </div>
+            <div class="radio-card-desc">첨부 사진을 사이키델릭화</div>
+          </div>
+          <div class="radio-card" id="psy_role_card_style" onclick="setPsyRefRole('style')">
+            <div class="radio-card-title">
+              <input type="radio" name="psy_ref_role" id="psy_role_style">
+              🎨 스타일 참조
+            </div>
+            <div class="radio-card-desc">첨부 그림의 화풍만 참고</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PSY STEP 2: Subject & Distortion -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="step-num" style="background: linear-gradient(135deg, #d946ef, #7c3aed);">2</div>
+            피사체 &amp; 변형 강도 (Subject &amp; Distortion)
+          </div>
+          <label class="img-ref-toggle psy-hidden" id="psy_ref_label2" title="체크 시 첨부 사진의 피사체를 그대로 유지하도록 지시하고 입력을 건너뜁니다.">
+            <input type="checkbox" id="psy_ref_step2" checked onchange="togglePsyRefStep(2)">
+            📷 첨부 사진 피사체 유지 (스킵)
+          </label>
+        </div>
+
+        <div class="skip-notice" id="psy_notice_step2">
+          <span>✨</span>
+          <span><b>사진 변환 모드:</b> 첨부 사진의 피사체·포즈·주요 특징을 유지한 채 사이키델릭 화풍으로 바꿉니다. (세부 입력 스킵)</span>
+        </div>
+
+        <div class="card-content" id="psy_content_step2">
+          <div class="form-group" style="margin-bottom: 10px;">
+            <div class="form-label">
+              <span>🎯 피사체 (1개만 선택)</span>
+              <span class="mode-badge-single">● 단일 선택</span>
+            </div>
+            <div class="chips-group" id="chips_psy_subject" data-mode="single">
+              <span class="chip active" data-val="side-profile portrait of a person whose face and hair are built from flowing contour bands of color">👤 옆얼굴 초상</span>
+              <span class="chip" data-val="front-facing portrait face with symmetrical features dissolving into patterns">🙂 정면 얼굴</span>
+              <span class="chip" data-val="surreal grinning monster creature with many eyes, sharp teeth and a long curling tongue">👹 괴물·생명체</span>
+              <span class="chip" data-val="vintage hippie camper van covered in swirling rainbow patterns">🚐 탈것·사물</span>
+              <span class="chip" data-val="no central subject, pure abstract composition">🌀 순수 추상</span>
+            </div>
+            <input type="text" id="psy_custom_subject" placeholder="직접 입력 (예: a cat playing an electric guitar)" oninput="updatePsyPrompt()">
+          </div>
+
+          <div class="form-group">
+            <div class="form-label">
+              <span>🫠 변형 강도 (1개만 선택)</span>
+              <span class="mode-badge-single">● 단일 선택</span>
+            </div>
+            <div class="chips-group" id="chips_psy_distort" data-mode="single">
+              <span class="chip" data-val="the subject keeps a clear readable silhouette">🧍 원형 유지</span>
+              <span class="chip active" data-val="forms melting and flowing into liquid waves">🫠 녹아내림</span>
+              <span class="chip" data-val="kaleidoscopic fragmentation with repeated eyes and mirrored features">🔮 만화경 분열</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PSY STEP 3: Motifs & Pattern Fills -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="step-num" style="background: linear-gradient(135deg, #d946ef, #7c3aed);">3</div>
+            모티프 &amp; 패턴 채움 (Motifs &amp; Patterns)
+          </div>
+          <label class="img-ref-toggle psy-hidden" id="psy_ref_label3" title="체크 시 첨부 사진의 의상·사물을 유지하고 입력을 건너뜁니다.">
+            <input type="checkbox" id="psy_ref_step3" onchange="togglePsyRefStep(3)">
+            📷 첨부 사진 요소 유지 (스킵)
+          </label>
+        </div>
+
+        <div class="skip-notice" id="psy_notice_step3">
+          <span>✨</span>
+          <span><b>사진 변환 모드:</b> 첨부 사진의 의상·사물·장면 요소를 유지하고 사이키델릭 색과 패턴으로만 바꿉니다. (세부 입력 스킵)</span>
+        </div>
+
+        <div class="card-content" id="psy_content_step3">
+          <div class="outfit-presets-bar">
+            <span style="font-size: 11px; font-weight: 700; color: #a1a1aa; margin-right: 4px;">⚡ 레퍼런스 프리셋:</span>
+            <button class="outfit-preset-btn active" data-psy-preset="neon_portrait" onclick="applyPsyPreset('neon_portrait')">🌸 네온 팝아트 초상</button>
+            <button class="outfit-preset-btn" data-psy-preset="swirl_doodle" onclick="applyPsyPreset('swirl_doodle')">🌀 스월 두들</button>
+            <button class="outfit-preset-btn" data-psy-preset="flower_power" onclick="applyPsyPreset('flower_power')">☮️ 플라워파워 포스터</button>
+            <button class="outfit-preset-btn" data-psy-preset="visionary_marker" onclick="applyPsyPreset('visionary_marker')">👁️ 비저너리 마커화</button>
+            <button class="outfit-preset-btn" onclick="clearPsyMotifs()" style="color: #71717a;">✕ 비우기</button>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 10px;">
+            <div class="form-label">
+              <span>🍄 모티프 (중복 체크 가능)</span>
+              <span class="mode-badge-multi">✓ 중복 선택 가능</span>
+            </div>
+            <div class="chips-group" id="chips_psy_motif">
+              <span class="chip active" data-val="blooming flowers and sunflowers">🌼 꽃</span>
+              <span class="chip" data-val="spotted toadstool mushrooms">🍄 버섯</span>
+              <span class="chip" data-val="staring eyeballs">👁️ 눈</span>
+              <span class="chip" data-val="peace symbols">☮️ 피스 마크</span>
+              <span class="chip active" data-val="stars, planets and cosmic dots">🪐 별·행성</span>
+              <span class="chip" data-val="rainbow arcs">🌈 무지개</span>
+              <span class="chip" data-val="Om symbols and mandala ornaments">🕉️ Om·만다라</span>
+              <span class="chip" data-val="butterflies">🦋 나비</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-label">
+              <span>🔵 패턴 채움 (중복 체크 가능)</span>
+              <span class="mode-badge-multi">✓ 중복 선택 가능</span>
+            </div>
+            <div class="chips-group" id="chips_psy_pattern">
+              <span class="chip active" data-val="halftone dot shading">⚫ 하프톤</span>
+              <span class="chip active" data-val="concentric circle rings">🎯 동심원</span>
+              <span class="chip" data-val="bold stripes">〰️ 줄무늬</span>
+              <span class="chip" data-val="paisley ornaments">🌿 페이즐리</span>
+              <span class="chip" data-val="checkerboard tiles">🏁 체커</span>
+              <span class="chip" data-val="polka dots">🔴 물방울</span>
+            </div>
+            <input type="text" id="psy_custom_motif" placeholder="직접 추가 (예: melting clocks, lava lamp blobs)" oninput="updatePsyPrompt()">
+          </div>
+        </div>
+      </div>
+
+      <!-- PSY STEP 4: Ratio, Composition & Background -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="step-num" style="background: linear-gradient(135deg, #d946ef, #7c3aed);">4</div>
+            비율 · 구성 · 배경 (Ratio, Composition &amp; Background)
+          </div>
+          <label class="img-ref-toggle psy-hidden" id="psy_ref_label4" title="체크 시 첨부 사진의 비율과 구도를 유지하고 입력을 건너뜁니다.">
+            <input type="checkbox" id="psy_ref_step4" checked onchange="togglePsyRefStep(4)">
+            📷 첨부 사진 비율·구도 유지 (스킵)
+          </label>
+        </div>
+
+        <div class="skip-notice" id="psy_notice_step4">
+          <span>✨</span>
+          <span><b>사진 변환 모드:</b> 첨부 사진의 원본 비율과 전체 구도를 자르지 않고 유지합니다. (세부 입력 스킵)</span>
+        </div>
+
+        <div class="card-content" id="psy_content_step4">
+          <div class="form-group" style="margin-bottom: 10px;">
+            <div class="form-label">
+              <span>📐 캔버스 비율 (1개만 선택)</span>
+              <span class="mode-badge-single">● 단일 선택</span>
+            </div>
+            <div class="chips-group" id="chips_psy_ratio" data-mode="single">
+              <span class="chip active" data-val="2:3 vertical poster format">🖼️ 2:3 포스터</span>
+              <span class="chip" data-val="1:1 square format">⬛ 1:1 정사각</span>
+              <span class="chip" data-val="9:16 vertical format">📱 9:16 세로</span>
+              <span class="chip" data-val="16:9 widescreen format">🎬 16:9 와이드</span>
+              <span class="chip" data-val="keep the original aspect ratio of the attached photo">📐 원본 유지 (사진 변환 전용)</span>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 10px;">
+            <div class="form-label">
+              <span>🧭 구성 (1개만 선택)</span>
+              <span class="mode-badge-single">● 단일 선택</span>
+            </div>
+            <div class="chips-group" id="chips_psy_comp" data-mode="single">
+              <span class="chip active" data-val="single large central portrait dominating the frame">👤 중앙 초상</span>
+              <span class="chip" data-val="dense horror-vacui composition with every area filled edge to edge">🧩 빈틈 없이 채움</span>
+              <span class="chip" data-val="radial sunburst composition with rays spreading from a glowing sun">☀️ 방사형 햇살</span>
+              <span class="chip" data-val="flowing wave composition with layered liquid ribbons sweeping across">🌊 흐르는 물결</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-label">
+              <span>🌌 배경 (1개만 선택)</span>
+              <span class="mode-badge-single">● 단일 선택</span>
+            </div>
+            <div class="chips-group" id="chips_psy_bg" data-mode="single">
+              <span class="chip active" data-val="black cosmic night sky sprinkled with colorful star dots">🌌 별 우주</span>
+              <span class="chip" data-val="radiating sunburst light rays in alternating colors">🌅 햇살 광선</span>
+              <span class="chip" data-val="layered rolling wave bands of color">🌊 물결 띠</span>
+              <span class="chip" data-val="clean white border margin around the artwork">⬜ 흰 여백 테두리</span>
+            </div>
+            <input type="text" id="psy_custom_bg" placeholder="직접 추가 (예: desert canyon under a giant moon)" oninput="updatePsyPrompt()">
+          </div>
+        </div>
+      </div>
+
+      <!-- PSY STEP 5: Psychedelic Lettering -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="step-num" style="background: linear-gradient(135deg, #d946ef, #7c3aed);">5</div>
+            💬 사이키델릭 레터링 (Psychedelic Lettering)
+          </div>
+          <label class="text-overlay-toggle" title="체크 시 60년대 콘서트 포스터풍 버블 레터링 문구를 넣습니다.">
+            <input type="checkbox" id="psy_enable_lettering" onchange="togglePsyLettering()">
+            💬 레터링 활성화
+          </label>
+        </div>
+
+        <div class="skip-notice show" id="psy_notice_step5">
+          <span>💬</span>
+          <span><b>레터링 비활성화 상태:</b> 토글을 켜면 문구 1개를 녹아내리는 버블 레터링으로 넣습니다. 장식 글씨는 깨지기 쉬우니 1~3단어를 권장합니다.</span>
+        </div>
+
+        <div class="card-content dimmed" id="psy_content_step5">
+          <div class="text-row-item">
+            <div class="text-row-main">
+              <span class="text-row-badge">T</span>
+              <input type="text" class="text-row-input" id="psy_lettering_text" placeholder="예: FAR OUT, PEACE &amp; LOVE" oninput="onPsyLetteringInput()" disabled>
+            </div>
+            <div class="text-row-options">
+              <div class="text-opt-group">
+                <span class="text-opt-label">↕️ 위치:</span>
+                <select class="text-select" id="psy_lettering_pos" onchange="updatePsyPrompt()" disabled>
+                  <option value="top">상단 (Top)</option>
+                  <option value="middle">중앙 (Middle)</option>
+                  <option value="bottom" selected>하단 (Bottom)</option>
+                </select>
+              </div>
+              <div class="text-opt-group">
+                <span class="text-opt-label">🎨 색상:</span>
+                <select class="text-select" id="psy_lettering_color" onchange="updatePsyPrompt()" disabled>
+                  <option value="rainbow gradient" selected>무지개 그라데이션</option>
+                  <option value="hot pink">핫 핑크</option>
+                  <option value="acid yellow">애시드 옐로</option>
+                  <option value="electric cyan">일렉트릭 시안</option>
+                  <option value="white with a thick black outline">화이트 + 검정 외곽선</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PSY STEP 6: Palette, Line, Density & Quality -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="step-num" style="background: linear-gradient(135deg, #d946ef, #7c3aed);">6</div>
+            팔레트 · 선 · 보존 강도 &amp; 품질 (Palette, Line &amp; Quality)
+          </div>
+          <span style="font-size: 11px; color: #71717a;">색 충돌·선 질감 및 결함 방지</span>
+        </div>
+
+        <div class="form-grid-2" style="margin-bottom: 8px;">
+          <div class="form-group">
+            <div class="form-label">
+              <span>🎨 팔레트</span>
+              <span class="mode-badge-single">● 단일</span>
+            </div>
+            <div class="chips-group" id="chips_psy_palette" data-mode="single">
+              <span class="chip active" data-val="saturated clashing neon palette of hot pink, electric cyan, acid yellow, tangerine orange and violet">⚡ 네온 충돌</span>
+              <span class="chip" data-val="full-spectrum rainbow palette with smooth color transitions">🌈 무지개</span>
+              <span class="chip" data-val="bright candy pastel palette with sunny highlights">🍬 밝은 파스텔</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label">
+              <span>✒️ 선 질감</span>
+              <span class="mode-badge-single">● 단일</span>
+            </div>
+            <div class="chips-group" id="chips_psy_line" data-mode="single">
+              <span class="chip active" data-val="thick bold black outlines">🖊️ 굵은 검정선</span>
+              <span class="chip" data-val="hand-drawn marker linework with slight wobble">🖍️ 마커 손맛</span>
+              <span class="chip" data-val="no outlines, shapes defined by color only">🫧 외곽선 없음</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label">
+              <span>🧱 밀도</span>
+              <span class="mode-badge-single">● 단일</span>
+            </div>
+            <div class="chips-group" id="chips_psy_density" data-mode="single">
+              <span class="chip active" data-val="extremely dense intricate detail, no empty space">🧩 최대 밀도</span>
+              <span class="chip" data-val="balanced detail with a clear focal point">⚖️ 균형</span>
+              <span class="chip" data-val="airy composition with breathing room">🍃 여유</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label">
+              <span>🪪 원본 정체성 보존 강도</span>
+              <span class="mode-badge-single">● 단일</span>
+            </div>
+            <div class="chips-group" id="chips_psy_identity" data-mode="single">
+              <span class="chip" data-val="loose interpretation of the original subject, identity may be heavily stylized">낮음</span>
+              <span class="chip active" data-val="keep the subject recognizable while fully stylizing it">중간</span>
+              <span class="chip" data-val="preserve the subject's identity, facial proportions and pose faithfully, applying the psychedelic style to colors, lines and patterns only">높음</span>
+            </div>
+            <div class="psy-sub-label">* 📷 사진 변환 모드에서만 프롬프트에 반영됩니다.</div>
+          </div>
+        </div>
+
+        <div class="strict-mode-panel" id="psy_panel_enforce_model" style="margin-bottom: 8px;">
+          <label class="strict-mode-label" for="psy_chk_enforce_model">
+            <input type="checkbox" id="psy_chk_enforce_model" checked onchange="updatePsyPrompt()">
+            <div class="strict-mode-info">
+              <div class="strict-mode-title">
+                <span>🚫 파이썬/OpenCV 필터 변환 차단 &amp; 네이티브 생성 모델 강제</span>
+                <span class="strict-mode-badge">강제 ON</span>
+              </div>
+              <div class="strict-mode-desc">
+                AI 에이전트가 파이썬, OpenCV, PIL의 포스터라이즈·색상 필터로 사이키델릭 효과를 흉내 내는 시도를 차단하고, AI 이미지 생성 모델 도구만 사용하도록 강제합니다.
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="checkbox-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+          <label class="check-item">
+            <input type="checkbox" id="psy_neg_photo" checked onchange="updatePsyPrompt()">
+            실사/3D 렌더링 배제
+          </label>
+          <label class="check-item">
+            <input type="checkbox" id="psy_neg_muddy" checked onchange="updatePsyPrompt()">
+            탁한 색 배제
+          </label>
+          <label class="check-item">
+            <input type="checkbox" id="psy_neg_watermark" checked onchange="updatePsyPrompt()">
+            서명/워터마크 제거
+          </label>
+          <label class="check-item" id="psy_label_neg_text" style="flex-wrap: wrap;">
+            <input type="checkbox" id="psy_neg_text" checked onchange="onPsyNegTextChange()">
+            <span>텍스트/글자 제거</span>
+            <span id="psy_neg_text_badge" class="conflict-badge" style="display: none;">⚠️ 레터링 사용 중 자동 해제</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+
     <!-- Right Output Panel -->
     <div class="output-panel">
       <div class="output-header">
@@ -2504,13 +3028,17 @@
 
       const btnPixel = document.getElementById('btn_tab_pixel');
       const btnIcon = document.getElementById('btn_tab_icon');
+      const btnPsy = document.getElementById('btn_tab_psy');
       if (btnPixel) btnPixel.classList.toggle('active', mode === 'pixel');
       if (btnIcon) btnIcon.classList.toggle('active', mode === 'icon');
+      if (btnPsy) btnPsy.classList.toggle('active', mode === 'psy');
 
       const pixelContainer = document.getElementById('pixel_steps_container');
       const iconContainer = document.getElementById('icon_steps_container');
+      const psyContainer = document.getElementById('psy_steps_container');
       if (pixelContainer) pixelContainer.style.display = (mode === 'pixel' ? 'flex' : 'none');
       if (iconContainer) iconContainer.style.display = (mode === 'icon' ? 'flex' : 'none');
+      if (psyContainer) psyContainer.style.display = (mode === 'psy' ? 'flex' : 'none');
 
       const outTitle = document.getElementById('output_panel_title');
 
@@ -2518,10 +3046,14 @@
         if (outTitle) outTitle.innerText = '📝 픽셀아트 최종 조합 프롬프트';
         syncFormatButtons(targetFormats);
         updatePrompt();
-      } else {
+      } else if (mode === 'icon') {
         if (outTitle) outTitle.innerText = '📝 아이콘 최종 조합 프롬프트';
         syncFormatButtons(iconTargetFormats);
         updateIconPrompt();
+      } else {
+        if (outTitle) outTitle.innerText = '📝 사이키델릭 최종 조합 프롬프트';
+        syncFormatButtons(psyTargetFormats);
+        updatePsyPrompt();
       }
 
       safeSetStorage('gotchaprompt_studio', mode);
@@ -2546,9 +3078,12 @@
       if (currentStudioMode === 'pixel') {
         targetFormats = actives;
         updatePrompt();
-      } else {
+      } else if (currentStudioMode === 'icon') {
         iconTargetFormats = actives;
         updateIconPrompt();
+      } else {
+        psyTargetFormats = actives;
+        updatePsyPrompt();
       }
     }
 
@@ -3153,8 +3688,10 @@
     function handleReset() {
       if (currentStudioMode === 'pixel') {
         resetAll();
-      } else {
+      } else if (currentStudioMode === 'icon') {
         resetIconAll();
+      } else {
+        resetPsyAll();
       }
     }
 
@@ -3378,6 +3915,433 @@
       updateIconPrompt();
     }
 
+    // ===== Psychedelic Studio =====
+    let psyTargetFormats = [".png"];
+    let psyRefRole = 'new'; // 'new' | 'convert' | 'style'
+    let psyStyleIdx = 0;
+    let psyUserNegTextPref = true;
+
+    const PSY_STYLES = [
+      "Psychedelic neon pop-art poster illustration, bold flat vector shapes with thick dark contour outlines, halftone dot shading and flowing contour bands of color",
+      "Psychedelic groovy doodle illustration, dense all-over pattern of flowing swirls, spirals and flame-like curls, smooth rainbow gradient fills inside bold black outlines",
+      "1960s-1970s flower-power psychedelic pop-art poster illustration, clean confident line art, bright saturated rainbow colors with candy accents, playful optimistic hippie-era mood",
+      "Hand-drawn visionary psychedelic lowbrow art, alcohol marker and colored pencil illustration on paper, intricate obsessive linework, visible marker strokes and paper texture, grotesque surreal energy"
+    ];
+
+    const PSY_RATIO_ORIGINAL = "keep the original aspect ratio of the attached photo";
+
+    const PSY_PRESETS = {
+      neon_portrait: {
+        style: 0,
+        subject: "side-profile portrait of a person whose face and hair are built from flowing contour bands of color",
+        distort: "forms melting and flowing into liquid waves",
+        motif: ["blooming flowers and sunflowers", "stars, planets and cosmic dots"],
+        pattern: ["halftone dot shading", "concentric circle rings"],
+        ratio: "2:3 vertical poster format",
+        comp: "single large central portrait dominating the frame",
+        bg: "black cosmic night sky sprinkled with colorful star dots",
+        palette: "saturated clashing neon palette of hot pink, electric cyan, acid yellow, tangerine orange and violet",
+        line: "thick bold black outlines",
+        density: "extremely dense intricate detail, no empty space"
+      },
+      swirl_doodle: {
+        style: 1,
+        subject: "no central subject, pure abstract composition",
+        distort: "forms melting and flowing into liquid waves",
+        motif: ["blooming flowers and sunflowers"],
+        pattern: ["bold stripes"],
+        ratio: "1:1 square format",
+        comp: "dense horror-vacui composition with every area filled edge to edge",
+        bg: "clean white border margin around the artwork",
+        palette: "full-spectrum rainbow palette with smooth color transitions",
+        line: "thick bold black outlines",
+        density: "extremely dense intricate detail, no empty space"
+      },
+      flower_power: {
+        style: 2,
+        subject: "vintage hippie camper van covered in swirling rainbow patterns",
+        distort: "the subject keeps a clear readable silhouette",
+        motif: ["peace symbols", "rainbow arcs", "spotted toadstool mushrooms", "blooming flowers and sunflowers", "stars, planets and cosmic dots"],
+        pattern: ["polka dots"],
+        ratio: "2:3 vertical poster format",
+        comp: "radial sunburst composition with rays spreading from a glowing sun",
+        bg: "radiating sunburst light rays in alternating colors",
+        palette: "bright candy pastel palette with sunny highlights",
+        line: "thick bold black outlines",
+        density: "balanced detail with a clear focal point"
+      },
+      visionary_marker: {
+        style: 3,
+        subject: "surreal grinning monster creature with many eyes, sharp teeth and a long curling tongue",
+        distort: "kaleidoscopic fragmentation with repeated eyes and mirrored features",
+        motif: ["staring eyeballs", "Om symbols and mandala ornaments"],
+        pattern: ["bold stripes", "checkerboard tiles", "concentric circle rings"],
+        ratio: "9:16 vertical format",
+        comp: "dense horror-vacui composition with every area filled edge to edge",
+        bg: "layered rolling wave bands of color",
+        palette: "saturated clashing neon palette of hot pink, electric cyan, acid yellow, tangerine orange and violet",
+        line: "hand-drawn marker linework with slight wobble",
+        density: "extremely dense intricate detail, no empty space"
+      }
+    };
+
+    function getPsyCheck(id) {
+      const el = document.getElementById(id);
+      return !!(el && el.checked);
+    }
+
+    function getPsyText(id) {
+      const el = document.getElementById(id);
+      return el ? el.value.trim() : "";
+    }
+
+    function setPsyStyle(idx) {
+      psyStyleIdx = idx;
+      for (let i = 0; i < PSY_STYLES.length; i++) {
+        const card = document.getElementById(`psy_card_style_${i}`);
+        const radio = document.getElementById(`psy_style_${i}`);
+        if (card) card.classList.toggle('active', i === idx);
+        if (radio) radio.checked = (i === idx);
+      }
+      updatePsyPrompt();
+    }
+
+    function setPsyRefRole(role) {
+      const prevRole = psyRefRole;
+      psyRefRole = role;
+      ['new', 'convert', 'style'].forEach(r => {
+        const card = document.getElementById(`psy_role_card_${r}`);
+        const radio = document.getElementById(`psy_role_${r}`);
+        if (card) card.classList.toggle('active', r === role);
+        if (radio) radio.checked = (r === role);
+      });
+
+      // 사진 변환 모드로 새로 진입하면 스킵 기본값 적용 (2단계 ON, 3단계 OFF, 4단계 ON)
+      if (role === 'convert' && prevRole !== 'convert') {
+        const defaults = { 2: true, 3: false, 4: true };
+        [2, 3, 4].forEach(n => {
+          const chk = document.getElementById(`psy_ref_step${n}`);
+          if (chk) chk.checked = defaults[n];
+        });
+      }
+
+      [2, 3, 4].forEach(n => {
+        const label = document.getElementById(`psy_ref_label${n}`);
+        if (label) label.classList.toggle('psy-hidden', role !== 'convert');
+        applyPsyRefStepUI(n);
+      });
+      updatePsyPrompt();
+    }
+
+    function isPsyStepSkipped(n) {
+      return psyRefRole === 'convert' && getPsyCheck(`psy_ref_step${n}`);
+    }
+
+    function applyPsyRefStepUI(n) {
+      const content = document.getElementById(`psy_content_step${n}`);
+      const notice = document.getElementById(`psy_notice_step${n}`);
+      if (!content) return;
+      const skipped = isPsyStepSkipped(n);
+      content.classList.toggle('dimmed', skipped);
+      if (notice) notice.classList.toggle('show', skipped);
+      content.querySelectorAll("input, select").forEach(el => {
+        if (skipped) el.setAttribute("disabled", "true");
+        else el.removeAttribute("disabled");
+      });
+    }
+
+    function togglePsyRefStep(n) {
+      applyPsyRefStepUI(n);
+      updatePsyPrompt();
+    }
+
+    function unlockPsyStep(n) {
+      const chk = document.getElementById(`psy_ref_step${n}`);
+      if (chk && isPsyStepSkipped(n)) {
+        chk.checked = false;
+        applyPsyRefStepUI(n);
+      }
+    }
+
+    function applyPsyPreset(key, autoUnlock = true) {
+      const p = PSY_PRESETS[key];
+      if (!p) return;
+      if (autoUnlock) unlockPsyStep(3);
+
+      document.querySelectorAll("#psy_steps_container .outfit-preset-btn[data-psy-preset]").forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-psy-preset') === key);
+      });
+
+      setChips("chips_psy_subject", [p.subject]);
+      setChips("chips_psy_distort", [p.distort]);
+      setChips("chips_psy_motif", p.motif);
+      setChips("chips_psy_pattern", p.pattern);
+      setChips("chips_psy_ratio", [p.ratio]);
+      setChips("chips_psy_comp", [p.comp]);
+      setChips("chips_psy_bg", [p.bg]);
+      setChips("chips_psy_palette", [p.palette]);
+      setChips("chips_psy_line", [p.line]);
+      setChips("chips_psy_density", [p.density]);
+      setPsyStyle(p.style);
+    }
+
+    function clearPsyMotifs() {
+      unlockPsyStep(3);
+      document.querySelectorAll("#psy_steps_container .outfit-preset-btn").forEach(b => b.classList.remove('active'));
+      setChips("chips_psy_motif", []);
+      setChips("chips_psy_pattern", []);
+      const custom = document.getElementById("psy_custom_motif");
+      if (custom) custom.value = "";
+      updatePsyPrompt();
+    }
+
+    function hasActivePsyLettering() {
+      return getPsyCheck('psy_enable_lettering') && getPsyText('psy_lettering_text').length > 0;
+    }
+
+    function syncPsyConflictAvoidance() {
+      const active = hasActivePsyLettering();
+      const negText = document.getElementById('psy_neg_text');
+      const badge = document.getElementById('psy_neg_text_badge');
+      const label = document.getElementById('psy_label_neg_text');
+      if (!negText) return;
+      if (active) {
+        negText.checked = false;
+        negText.disabled = true;
+        if (badge) badge.style.display = 'inline-block';
+        if (label) label.classList.add('disabled');
+      } else {
+        negText.disabled = false;
+        negText.checked = psyUserNegTextPref;
+        if (badge) badge.style.display = 'none';
+        if (label) label.classList.remove('disabled');
+      }
+    }
+
+    function onPsyNegTextChange() {
+      const chk = document.getElementById('psy_neg_text');
+      if (chk && !chk.disabled) psyUserNegTextPref = chk.checked;
+      updatePsyPrompt();
+    }
+
+    function onPsyLetteringInput() {
+      syncPsyConflictAvoidance();
+      updatePsyPrompt();
+    }
+
+    function togglePsyLettering() {
+      const on = getPsyCheck('psy_enable_lettering');
+      const content = document.getElementById('psy_content_step5');
+      const notice = document.getElementById('psy_notice_step5');
+      if (content) {
+        content.classList.toggle('dimmed', !on);
+        content.querySelectorAll("input, select").forEach(el => {
+          if (on) el.removeAttribute("disabled");
+          else el.setAttribute("disabled", "true");
+        });
+      }
+      if (notice) notice.classList.toggle('show', !on);
+      syncPsyConflictAvoidance();
+      updatePsyPrompt();
+    }
+
+    function pickPsySingle(containerId, customId) {
+      const custom = customId ? getPsyText(customId) : "";
+      if (custom) return custom;
+      const chips = getSelectedChips(containerId);
+      return chips.length > 0 ? chips[0] : "";
+    }
+
+    function updatePsyPrompt() {
+      if (currentStudioMode !== 'psy') return;
+      syncPsyConflictAvoidance();
+      const parts = [];
+
+      // Step 1: Sub-style & Reference Role
+      let style = PSY_STYLES[psyStyleIdx] || PSY_STYLES[0];
+      const customStyle = getPsyText('psy_custom_style');
+      if (customStyle) style += `, ${customStyle}`;
+      parts.push(style);
+
+      if (psyRefRole === 'convert') {
+        parts.push("Transform the attached reference photo into this psychedelic illustration style");
+      } else if (psyRefRole === 'style') {
+        parts.push("Use the attached images strictly as style references for color palette, linework, pattern density and overall mood only; do not copy their subjects, composition, characters, text, logos or signatures, and create a completely original artwork");
+      }
+
+      // Step 2: Subject & Distortion
+      if (isPsyStepSkipped(2)) {
+        parts.push("keep the main subject of the attached photo recognizable with the same pose, framing and key features, reimagined in this psychedelic style");
+      } else {
+        const step2 = [];
+        const subject = pickPsySingle("chips_psy_subject", "psy_custom_subject");
+        if (subject) step2.push(subject);
+        const distort = pickPsySingle("chips_psy_distort");
+        if (distort) step2.push(distort);
+        if (step2.length > 0) parts.push(step2.join(', '));
+      }
+
+      // Step 3: Motifs & Patterns
+      if (isPsyStepSkipped(3)) {
+        parts.push("keep the original clothing, objects and scene elements from the attached photo, restyled with psychedelic colors and patterns");
+      } else {
+        const step3 = [];
+        const motifs = getSelectedChips("chips_psy_motif");
+        const customMotif = getPsyText('psy_custom_motif');
+        if (customMotif) motifs.push(customMotif);
+        if (motifs.length > 0) step3.push(`decorated with ${motifs.join(', ')}`);
+        const patterns = getSelectedChips("chips_psy_pattern");
+        if (patterns.length > 0) step3.push(`surfaces filled with ${patterns.join(', ')}`);
+        if (step3.length > 0) parts.push(step3.join(', '));
+      }
+
+      // Step 4: Ratio, Composition & Background
+      if (isPsyStepSkipped(4)) {
+        parts.push("keep the original aspect ratio and overall composition of the attached photo without cropping");
+      } else {
+        const step4 = [];
+        const ratio = pickPsySingle("chips_psy_ratio");
+        if (ratio && (ratio !== PSY_RATIO_ORIGINAL || psyRefRole === 'convert')) step4.push(ratio);
+        const comp = pickPsySingle("chips_psy_comp");
+        if (comp) step4.push(comp);
+        const bg = pickPsySingle("chips_psy_bg", "psy_custom_bg");
+        if (bg) step4.push(bg);
+        if (step4.length > 0) parts.push(step4.join(', '));
+      }
+
+      // Step 5: Psychedelic Lettering (single phrase)
+      const lettering = hasActivePsyLettering();
+      if (lettering) {
+        const text = getPsyText('psy_lettering_text');
+        const pos = document.getElementById('psy_lettering_pos').value;
+        const color = document.getElementById('psy_lettering_color').value;
+        parts.push(`with bold 1960s psychedelic concert-poster bubble lettering reading "${text}" placed at the ${pos} of the image, warped melting letterforms in ${color}, every letter clearly legible and spelled exactly as written`);
+      }
+
+      // Step 6: Identity, Palette, Line, Density
+      if (psyRefRole === 'convert') {
+        const identity = pickPsySingle("chips_psy_identity");
+        if (identity) parts.push(identity);
+      }
+      const look = [];
+      const palette = pickPsySingle("chips_psy_palette");
+      if (palette) look.push(palette);
+      const line = pickPsySingle("chips_psy_line");
+      if (line) look.push(line);
+      const density = pickPsySingle("chips_psy_density");
+      if (density) look.push(density);
+      if (look.length > 0) parts.push(look.join(', '));
+
+      // Step 6: Native Image Model Enforcement
+      const enforceModel = getPsyCheck('psy_chk_enforce_model');
+      if (enforceModel) {
+        parts.push("CRITICAL EXECUTION MANDATE: Generate this artwork EXCLUSIVELY using native generative AI image models/tools (e.g., DALL-E 3, Imagen, Midjourney, generate_image diffusion tool). STRICTLY PROHIBITED: Do NOT write, execute, or use Python, OpenCV, PIL, posterize or color-filter scripts, or any algorithmic image processing code. The final image must be produced directly through model diffusion synthesis");
+      }
+
+      const negPhoto = getPsyCheck('psy_neg_photo');
+      const negMuddy = getPsyCheck('psy_neg_muddy');
+      const negWatermark = getPsyCheck('psy_neg_watermark');
+      const negText = getPsyCheck('psy_neg_text') && !lettering;
+
+      const negMain = [];
+      if (enforceModel) negMain.push('python code, python script, opencv filters, pil posterize filter, code execution, algorithmic post-processing');
+      if (negPhoto) negMain.push('no photorealism, no 3d render');
+      if (negMuddy) negMain.push('no muddy or desaturated colors, no dull grey tones');
+      if (negText) negMain.push('no text');
+      if (negWatermark) negMain.push('no watermark, no signature, no copyright text');
+      if (lettering) negMain.push('no misspelled or garbled lettering, no duplicate text');
+      if (negMain.length > 0) parts.push(negMain.join(', '));
+
+      // Target File Format
+      if (psyTargetFormats.length === 1) {
+        parts.push(`Target output format: deliver final asset as ${psyTargetFormats[0]} file`);
+      } else if (psyTargetFormats.length > 1) {
+        parts.push(`Target output formats: deliver final assets as ${psyTargetFormats.join(', ')} files`);
+      }
+
+      // Strictly Respond in Korean & Enforce Model
+      if (enforceModel) {
+        parts.push(`Please provide all responses and explanations strictly in Korean (모든 답변과 안내는 반드시 한국어로 작성해 주세요. 또한 파이썬 스크립트나 OpenCV/PIL 등의 코드 기반 이미지 필터 처리를 절대 시도하지 마시고, 반드시 생성형 AI 모델 본연의 이미지 생성 도구로 결과 이미지를 직접 생성해 주세요)`);
+      } else {
+        parts.push(`Please provide all responses and explanations strictly in Korean (모든 답변과 안내는 반드시 한국어로 작성해 주세요)`);
+      }
+
+      // Immediate Generation Mandate
+      parts.push(`IMMEDIATE GENERATION MANDATE: Do NOT output preliminary analysis, plan explanations, greetings, or conversational pre-announcements. Bypass all conversational filler and immediately invoke your native image generation tool to produce and deliver the artwork directly without asking for confirmation. (사전 분석, 계획 설명, 인사말 등의 서론을 일절 생략하고, 별도의 확인 질문이나 안내 절차 없이 즉시 이미지 생성 도구를 실행하여 결과 이미지를 바로 생성해 주세요)`);
+
+      const full = parts.join('. ') + '.';
+      document.getElementById('finalPrompt').value = full;
+      const words = full.split(/\s+/).filter(Boolean).length;
+      document.getElementById('wordCount').innerText = `단어 수: ${words}`;
+
+      // Dedicated Negative
+      const negList = [];
+      if (enforceModel) negList.push('python code', 'python script', 'opencv filter', 'pil posterize filter', 'code execution', 'algorithmic post-processing');
+      if (negPhoto) negList.push('photorealistic', 'photograph', '3d render', 'cgi');
+      if (negMuddy) negList.push('muddy colors', 'desaturated', 'dull grey palette', 'low contrast');
+      if (negText) negList.push('text', 'letters', 'words', 'typography');
+      if (negWatermark) negList.push('watermark', 'signature', 'copyright text', 'logo', 'username');
+      if (lettering) negList.push('misspelled text', 'garbled letters', 'duplicate text');
+      document.getElementById('negDisplay').innerText = negList.join(', ');
+    }
+
+    function resetPsyAll() {
+      psyTargetFormats = [".png"];
+      syncFormatButtons(psyTargetFormats);
+
+      ['psy_custom_style', 'psy_custom_subject', 'psy_custom_motif', 'psy_custom_bg', 'psy_lettering_text'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = "";
+      });
+
+      const letteringToggle = document.getElementById('psy_enable_lettering');
+      if (letteringToggle) letteringToggle.checked = false;
+      const pos = document.getElementById('psy_lettering_pos');
+      if (pos) pos.value = 'bottom';
+      const color = document.getElementById('psy_lettering_color');
+      if (color) color.value = 'rainbow gradient';
+
+      ['psy_chk_enforce_model', 'psy_neg_photo', 'psy_neg_muddy', 'psy_neg_watermark', 'psy_neg_text'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.checked = true;
+      });
+      psyUserNegTextPref = true;
+      setChips("chips_psy_identity", ["keep the subject recognizable while fully stylizing it"]);
+
+      psyRefRole = 'new';
+      setPsyRefRole('new');
+      togglePsyLettering();
+      applyPsyPreset('neon_portrait', false);
+    }
+
+    function initPsyStudio() {
+      document.querySelectorAll("#psy_steps_container .chips-group").forEach(group => {
+        const isSingle = (group.getAttribute("data-mode") === "single");
+        group.querySelectorAll(".chip").forEach(chip => {
+          chip.addEventListener("click", () => {
+            // 스마트 언락: 사진 변환 스킵으로 흐려진 2~4단계의 칩을 누르면 해당 단계 스킵 해제
+            const dimmedContainer = chip.closest(".dimmed");
+            const match = dimmedContainer ? /^psy_content_step([234])$/.exec(dimmedContainer.id) : null;
+            if (match) unlockPsyStep(Number(match[1]));
+
+            if (isSingle) {
+              const wasActive = chip.classList.contains("active");
+              group.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+              if (!wasActive || match) chip.classList.add("active");
+            } else if (match && !chip.classList.contains("active")) {
+              chip.classList.add("active");
+            } else {
+              chip.classList.toggle("active");
+            }
+            updatePsyPrompt();
+          });
+        });
+      });
+
+      setPsyRefRole('new');
+      togglePsyLettering();
+    }
+
     // Application Initialization
     function initApp() {
       try { initTheme(); } catch (e) { console.error("initTheme err:", e); }
@@ -3447,12 +4411,15 @@
       try { toggleRefStep(4); } catch (e) {}
       try { renderTextRows(); } catch (e) {}
       try { toggleTextOverlay(); } catch (e) {}
+      try { initPsyStudio(); } catch (e) { console.error("psy init err:", e); }
 
-      // Restore Studio Mode (Pixel or Icon)
+      // Restore Studio Mode (Pixel, Icon or Psychedelic)
       try {
         const savedStudio = safeGetStorage('gotchaprompt_studio');
         if (savedStudio === 'icon') {
           switchStudio('icon');
+        } else if (savedStudio === 'psy') {
+          switchStudio('psy');
         } else {
           switchStudio('pixel');
         }
