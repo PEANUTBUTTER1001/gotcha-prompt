@@ -52,7 +52,7 @@ def main():
     api = JSApi()
 
     window = webview.create_window(
-        title="👾 GotchaPrompt - AI 프롬프트 스튜디오 (픽셀 6단계 & 아이콘 7단계)",
+        title="👾 GotchaPrompt - AI 프롬프트 스튜디오 (픽셀 6단계 & 아이콘 7단계 & 사이키델릭 6단계)",
         html=html_content,
         js_api=api,
         width=1180,
